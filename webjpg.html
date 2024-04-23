@@ -14,21 +14,16 @@
 		<link href="css/webjpg.css" rel="stylesheet" type="text/css"/>
 	</head>
 
-	<body class="loading">
-		<div class="loader"> -->
-			<div class="center"> -->
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-				  <div class="wave"></div>
-			</div>
-			</div>
+	<body>
+			<div class="preloader js-preloader">
+    <span></span>
+    <span></span>
+    <span></span>
+	  <!-- <div class="shadow"></div> -->
+  </div>
+
+
+
 		<header>
 			<div class="nav">
 				<div class="container">
@@ -576,15 +571,20 @@
 		</section>
 
 		<script src="js/jquery.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$(window).on("load",function(){
-					$(".loader").delay(1000).fadeOut("slow",function(){
-						$("body").removeClass("loading");
-					});
-				});
-			});
+		<script src="js/jquery.preloadinator.min.js"></script>
+		<script>
+$('.js-preloader').preloadinator({
+  scroll: false,
+  minTime: 2000,
+  animation: 'fadeOut',
+  animationDuration: 400,
+ function() {},
+  afterEnableScroll: function() {},
+  afterRemovePreloader: function() {}
+
+});
 		</script>
+
 
 	</body>
 </html>
